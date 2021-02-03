@@ -1,0 +1,16 @@
+version: '3.2'
+
+services:
+  terraform:
+    # image: dnxsolutions/terraform:0.12.6-dnx1
+    image: dnxsolutions/terraform:0.12.24-dnx1
+    volumes:
+      - .:/work
+    environment:
+      - TF_VAR_aws_account_id
+      - WORKSPACE_PROD
+      - WORKSPACE_STAGE
+      - TF_LOG
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+      - AWS_DEFAULT_REGION
